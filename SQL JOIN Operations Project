@@ -1,5 +1,5 @@
-CREATE DATABASE activitymysql;
-
+CREATE DATABASE ompad_brent;
+use ompad_brent;
 
 CREATE TABLE patients(
     patient_id int,
@@ -39,11 +39,12 @@ CREATE TABLE patients(
 
 
 
---Students must write SQL queries to answer the following:
---Part A – Basic Join
+ ----Students must write SQL queries to answer the following:
+---Part A – Basic Join
 
 --Display the patient name and doctor name for all appointments.
-  SELECT patients.patient_name , appointments.doctor_name
+  
+   SELECT patients.patient_name , appointments.doctor_name
  FROM patients
  INNER JOIN appointments on patients.patient_id = appointments.patient_id;
 
@@ -51,7 +52,7 @@ CREATE TABLE patients(
 
 
 --Part B – Filtering with Join
---Display all patients from Cebu and their appointments.
+  --Display all patients from Cebu and their appointments.
     SELECT patients.patient_name , appointments.appointment_date
  FROM patients
  INNER JOIN appointments
@@ -61,7 +62,7 @@ CREATE TABLE patients(
 
 
 --Display appointments handled by Dr. Garcia with the patient names.
- SELECT patients.patient_name , appointments.doctor_name
+ --SELECT patients.patient_name , appointments.doctor_name
  FROM patients
  INNER JOIN appointments
  ON patients.patient_id = appointments.patient_id
@@ -77,8 +78,9 @@ CREATE TABLE patients(
  ON patients.patient_id = appointments.patient_id;
  
 
-  --Show all appointments even if the patient information does not exist in the Patients table.
- SELECT patients.patient_name , appointments.doctor_name , appointments.appointment_date
+   --Show all appointments even if the patient information does not exist in the Patients table.
+
+   SELECT patients.patient_name , appointments.doctor_name , appointments.appointment_date
  FROM patients
  RIGHT JOIN appointments
  ON patients.patient_id = appointments.patient_id;
