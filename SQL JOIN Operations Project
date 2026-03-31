@@ -62,7 +62,7 @@ CREATE TABLE patients(
 
 
 --Display appointments handled by Dr. Garcia with the patient names.
- --SELECT patients.patient_name , appointments.doctor_name
+ SELECT patients.patient_name , appointments.doctor_name
  FROM patients
  INNER JOIN appointments
  ON patients.patient_id = appointments.patient_id
